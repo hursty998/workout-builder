@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     box-sizing: border-box;
@@ -37,7 +38,7 @@ button{
 
 
 
-@media (max-width: 678px){
+@media (max-width: 1024px){
     header #start{
         display: none;
     }
@@ -50,7 +51,7 @@ button{
         display: none;
     }
     body{
-        font-size: 22px;
+        font-size: 21px;
     }
     button{
         width: 150px;
@@ -73,11 +74,11 @@ button{
         justify-content: center;
     }
     .circle{
-        margin-left:5%;
-        margin-right: 5%;
-        font-size: 20px;
-        height: 120px;
-        width: 120px;
+        margin-left:3%;
+        margin-right: 3%;
+        font-size: 14px;
+        height: 90px;
+        width: 90px;
         border: solid;
         float: left;
         border-radius: 100%;
@@ -85,17 +86,17 @@ button{
     }
     .circle p{
         position: absolute;
-        width: 120px;
-        bottom: 35px;
+        width: 90px;
+        bottom: 55px;
         
     }
     #c2 p{
-        bottom: 48px;
+        bottom: 65px;
     }
     
     
 }
-@media (min-width: 679px){
+@media (min-width: 1025px){
     header #start{
         float: right;
         margin-top: -35px;
