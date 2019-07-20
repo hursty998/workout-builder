@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="scripts" href="scripts/main.js">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/08ca90ab4f.js"></script>
 </head>
 <body>
     <header>
@@ -25,6 +26,25 @@
                 Plus, if there are any exercises that you do not like, then you can simply edit or remove them. <br><br>
                 <button id="start" onclick="">Start Now</button>
             </div>
+            <div id="q1">
+                <strong>Please Choose Number of Sessions Per Week:</strong> <br><br>
+                Our workout builder will create this number of workout sessions and will split muscle groups up into different sessions. <br><br>
+                <div id="dropdown1" onclick="document.getElementById('dropdown-box').style.display='block' ">
+                    <p id="number">1 </p> 
+                    <i id="arrow-down" class="fas fa-chevron-down"></i><br>
+                    <div id="dropdown-box">
+                        <input type="radio" name="num-days" checked onchange="document.getElementById('number').innerText='1'; document.getElementById('dropdown-box').style.display='none' " value="1"> 1 
+                        <input type="radio" name="num-days" onchange="document.getElementById('number').innerText='2'; document.getElementById('dropdown-box').style.display='none' " value="2"> 2
+                        <input type="radio" name="num-days" onchange="document.getElementById('number').innerText='3'; document.getElementById('dropdown-box').style.display='none'" value="3"> 3
+                        <input type="radio" name="num-days" onchange="document.getElementById('number').innerText='4'; document.getElementById('dropdown-box').style.display='none'" value="4"> 4
+                        <input type="radio" name="num-days" onchange="document.getElementById('number').innerText='5'; document.getElementById('dropdown-box').style.display='none' " value="5"> 5
+                    </div>
+                    
+
+                </div>
+                
+            </div>
+
         </div>
     </main>
 </body>
