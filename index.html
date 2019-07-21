@@ -18,6 +18,17 @@
         </div>
     </header>
     <main>
+        <div id="status-bar">
+            <div class="circle" id="c1">
+                <p>Number Of Days</p> 
+            </div>
+            <div class="circle" id="c2">
+                <p id="cp2">Equipment</p>
+            </div>
+            <div class="circle" id="c3">
+                <p>Choose Muscles</p> 
+            </div>
+        </div>
         <div class="container">
             <div id="welcome-box">
                 <strong> Welcome to the Workout Builder <br><br></strong>
@@ -26,6 +37,7 @@
                 Plus, if there are any exercises that you do not like, then you can simply edit or remove them. <br><br>
                 <button id="start" onclick="">Start Now</button>
             </div>
+        
             <div id="q1">
                 <strong>Please Choose Number of Sessions Per Week:</strong> <br><br>
                 Our workout builder will create this number of workout sessions and will split muscle groups up into different sessions. <br><br>
@@ -39,9 +51,8 @@
                         <input type="radio" name="num-days" onchange="document.getElementById('number').innerText='4'; document.getElementById('dropdown-box').style.display='none'" value="4"> 4
                         <input type="radio" name="num-days" onchange="document.getElementById('number').innerText='5'; document.getElementById('dropdown-box').style.display='none' " value="5"> 5
                     </div>
-                    
-
                 </div>
+                <button id="next">Next</button>
                 
             </div>
 

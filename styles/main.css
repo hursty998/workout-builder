@@ -36,6 +36,11 @@ header img{
 }
 @media (max-width: 1024px){
 /* for mobile devices smaller than 1024 pixels, up to a landscape ipad */
+    button{
+        font-size: 20px;
+        border: solid 2px;
+        background-color: white;
+    }
     #website-name{
         display: none;
     }
@@ -49,14 +54,51 @@ header img{
     #start {
         width: 45%;
         height: 40px;
-        font-size: 20px;
-        border: solid 2px;
-        background-color: white;
+        
     }
+    #status-bar{
+        width: 100%;
+        height: 100px;
+        justify-content: center;
+        margin: 10px 0 0 0;
+    }
+    .circle{
+        position: relative;
+        display: inline-block;
+        width: 90px;
+        height: 90px;
+        padding: 0 5px 0 5px;
+        margin-left: 5px;
+        margin-right: 5px;
+        font-size: 16px;
+        border: solid 2px;
+        border-radius: 50%;
+    }
+    .circle p{
+    position: absolute;
+    bottom: 25px;
+    }
+    #cp2{
+        bottom: 35px;
+        font-size: 15px;
+    }
+    #c1{
+        border-color: orange;
+    }
+
     #dropdown1 #dropdown-box{
         display: none;
     }
-    
+    input[type="radio"]{
+        margin-left: 17px;
+    }
+    #next{
+        position: absolute;
+        bottom: 60px;
+        left: 60%;
+        width: 35%;
+        height: 7%;
+    }
 
 }
 
