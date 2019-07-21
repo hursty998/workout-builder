@@ -34,7 +34,7 @@ header img{
 #welcome-box{
     display: none;
 }
-@media (max-width: 1024px){
+@media (max-width: 1023px){
 /* for mobile devices smaller than 1024 pixels, up to a landscape ipad */
     button{
         font-size: 20px;
@@ -102,7 +102,7 @@ header img{
 
 }
 
-@media (min-width: 1025px){
+@media (min-width: 1024px){
 /* for laptops and PCs, larger than 1025 pixels */
     
 }
