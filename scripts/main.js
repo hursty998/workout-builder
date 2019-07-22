@@ -9,6 +9,7 @@ function openQ2(){
     document.getElementById("q1").style.display="none";
     document.getElementById("q2").style.display="block";
     document.getElementById("status-bar").style.display="block"
+    document.getElementById("c1").style.borderColor ="green";
     document.getElementById("c2").style.borderColor ="orange";
 }
 var selected = 0
@@ -58,6 +59,7 @@ function nextE(){
             document.getElementById("q2").style.display="none"
             document.getElementById("q3").style.display="block"
             document.getElementById("c3").style.borderColor ="orange";
+            document.getElementById("c2").style.borderColor ="green";
             whichE+=1
             selected=0
         }
