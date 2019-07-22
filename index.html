@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Webiste Builder</title>
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="scripts" href="scripts/main.js">
+    <script src="scripts/main.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/08ca90ab4f.js"></script>
 </head>
@@ -35,7 +35,7 @@
                 This tool allows you to easily create a scientifically proven workout program tailored to you. <br><br>
                 All you need to do is click Start and answer a couple of questions. <br><br>
                 Plus, if there are any exercises that you do not like, then you can simply edit or remove them. <br><br>
-                <button id="start" onclick="">Start Now</button>
+                <button id="start" onclick="openQ1()">Start Now</button>
             </div>
         
             <div id="q1">
@@ -52,7 +52,29 @@
                         <input type="radio" name="num-days" onchange="document.getElementById('number').innerText='5'; document.getElementById('dropdown-box').style.display='none' " value="5"> 5
                     </div>
                 </div>
-                <button id="next">Next</button>
+                <button id="next" onclick="openQ2()">Next</button>
+                
+            </div>
+            <div id="q2">
+                <strong> Please Select Which of These Equipment's You Have Available: <br><br></strong>
+                You must have at least one of these equipments available to create a workout <br><br>
+                <div id="q21">
+                    <button class="choice" id="barbells" border-color="red" onclick="changeColor('barbells')">Barbells</button>
+                    <button class="choice" id="dumbbells" border-color="red" onmousedown="changeColor('dumbbells')">Dumbbells</button>
+                </div>
+                <div id="q22">
+                    <button class="choice" id="adjustable" border-color="red" onclick="changeColor('adjustable')">Adjustable Bench</button>
+                    <button class="choice" id="flat" border-color="red" onmousedown="changeColor('flat')">Flat Bench</button>
+                </div>
+                <div id="q23">
+                    <button class="choice" id="machines" border-color="red" onclick="changeColor('machines')">Machines</button>
+                    <button class="choice" id="Cabels" border-color="red" onmousedown="changeColor('Cabels')">Cabels</button>
+                    <button class="choice" id="Pullup" border-color="red" onmousedown="changeColor('Pullup')">Pull Up Bar</button>
+                </div>
+                <button id="next" onclick="nextE()">Next</button>
+                <button id="back" onclick="backE()">Back</button>
+            </div>
+            <div id="q3">
                 
             </div>
 

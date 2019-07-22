@@ -31,7 +31,7 @@ header img{
     width: 70px;
 }
 
-#welcome-box{
+#status-bar, #q1, #q2, #q22, #q23{
     display: none;
 }
 @media (max-width: 1023px){
@@ -40,6 +40,8 @@ header img{
         font-size: 20px;
         border: solid 2px;
         background-color: white;
+        padding: 0 10px;
+        margin: 10px 10px 10px 10px;
     }
     #website-name{
         display: none;
@@ -98,6 +100,16 @@ header img{
         left: 60%;
         width: 35%;
         height: 7%;
+    }
+    #back{
+        position: absolute;
+        bottom: 60px;
+        left: 15%;
+        width: 25%;
+        height: 7%;
+    }
+    .choice{
+        border-color: red;
     }
 
 }
