@@ -134,41 +134,50 @@ var MorCorP = []
 var muscles
 function answers(){
     numDays = document.getElementById("number").innerText
+    document.getElementById("pnumsesh").innerText= numDays
     
     if (document.getElementById("barbells").style.borderColor =="green"){
-        BarOrDumb.push("Barbells")
+        BarOrDumb.push("barbells")
+        document.getElementById("pavailable").innerText+="Barbells, "
     }
     if (document.getElementById("dumbbells").style.borderColor =="green"){
-        BarOrDumb.push(" Dumbbells")
+        BarOrDumb.push("dumbbells")
+        document.getElementById("pavailable").innerText+=" Dumbbells, "
     }
     
     if (document.getElementById("adjustable").style.borderColor =="green"){
-        AdjOrFlat.push("Adjustable Bench")
+        AdjOrFlat.push("adjustable")
+        document.getElementById("pavailable").innerText+=" Adjustable Bench, "
     }
     if (document.getElementById("flat").style.borderColor =="green"){
-        AdjOrFlat.push(" Flat Bench")
+        AdjOrFlat.push("flat")
+        document.getElementById("pavailable").innerText+=" Flat Bench, "
     }
     if (document.getElementById("machines").style.borderColor =="green"){
-        MorCorP.push("Machines")
+        MorCorP.push("machines")
+        document.getElementById("pavailable").innerText+=" Machines, "
     }
     if (document.getElementById("Cabels").style.borderColor =="green"){
-        MorCorP.push(" Cabels")
+        MorCorP.push("cabels")
+        document.getElementById("pavailable").innerText+=" Cabels, "
     }
     if (document.getElementById("Pullup").style.borderColor =="green"){
-        MorCorP.push(" Pull Up Bar")
+        MorCorP.push("pull")
+        document.getElementById("pavailable").innerText+=" Pull Up Bar"
     }
     if (document.getElementById("fullBody").style.borderColor =="green"){
-        muscles = "Full Body"
+        muscles = "full"
+        document.getElementById("pmuscles").innerText+= "Full Body"
     }
     if (document.getElementById("lowerBody").style.borderColor =="green"){
-        muscles = "Lower Body"
+        muscles = "lower"
+        document.getElementById("pmuscles").innerText+= "Lower Body"
     }
     if (document.getElementById("upperBody").style.borderColor =="green"){
-        muscles = "Upper Body"
+        muscles = "upper"
+        document.getElementById("pmuscles").innerText+= "Upper Body"
     }
-    document.getElementById("pnumsesh").innerText=numDays
+    /*document.getElementById("pnumsesh").innerText=numDays
     document.getElementById("pavailable").innerText=BarOrDumb+", "+AdjOrFlat+", "+MorCorP
-    document.getElementById("pmuscles").innerText=muscles
-
-    console.log(numDays, BarOrDumb, AdjOrFlat, MorCorP, muscles );
+    document.getElementById("pmuscles").innerText=muscles*/
 }

@@ -95,18 +95,14 @@ header img{
         margin-left: 17px;
     }
     #next{
-        position: absolute;
-        bottom: 60px;
-        left: 60%;
-        width: 35%;
-        height: 7%;
+        float: right;
+        width: 40%;
+        height: 50px;
     }
     #back{
-        position: absolute;
-        bottom: 60px;
-        left: 15%;
-        width: 25%;
-        height: 7%;
+        float: left;
+        width: 35%;
+        height: 50px;
     }
     .choice{
         border-color: red;
