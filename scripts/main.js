@@ -134,6 +134,18 @@ var MorCorP = []
 var muscles
 function answers(){
     numDays = document.getElementById("number").innerText
+    if (numDays<5){
+        document.getElementById("day5Results").style.display="none"
+    }
+    if (numDays<4){
+        document.getElementById("day4Results").style.display="none"
+    }
+    if (numDays<3){
+        document.getElementById("day3Results").style.display="none"
+    }
+    if (numDays<2){
+        document.getElementById("day2Results").style.display="none"
+    }
     document.getElementById("pnumsesh").innerText= numDays
     
     if (document.getElementById("barbells").style.borderColor =="green"){
@@ -177,7 +189,4 @@ function answers(){
         muscles = "upper"
         document.getElementById("pmuscles").innerText+= "Upper Body"
     }
-    /*document.getElementById("pnumsesh").innerText=numDays
-    document.getElementById("pavailable").innerText=BarOrDumb+", "+AdjOrFlat+", "+MorCorP
-    document.getElementById("pmuscles").innerText=muscles*/
 }
