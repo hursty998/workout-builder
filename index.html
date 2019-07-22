@@ -81,11 +81,33 @@
                 <button class="choice" id="lowerBody" border-color="red" onclick="changeColor2('lowerBody')">Lower Body</button>
                 <button class="choice" id="upperBody" border-color="red" onclick="changeColor2('upperBody')">Upper Body</button>
 
-                <button id="next" onclick="nextFinal()">Next</button>
+                <button id="next" onclick="nextFinal(); answers()">Next</button>
                 <button id="back" onclick="backE()">Back</button>
             </div>
             <div id="confirm">
-                
+                <strong> Are You Sure You Want to Finish? <br><br></strong>
+                You won't be able to go back from here <br><br>
+                <h3>Your Choices:</h3>
+                <p style="float: right" id="pnumsesh"></p>
+                <strong>Number of Sessions:</storng>  <br><br>
+                <strong>Available Equipment:</strong> <p id="pavailable"></p> <br>
+                <p style="float: right;" id="pmuscles"></p><strong>Muscle Group:</strong> 
+                <button id="next" onclick="confirm();">Confirm</button>
+                <button id="back" onclick="backLast()">Back</button>
+            </div>
+
+            <div id="results">
+                <strong>Results:</strong>
+                <i id="arrow-down" style="float: right; margin-left: 5px; margin-top: 4px;" class="fas fa-chevron-down"  onclick="document.getElementById('dropdown-box2').style.display='block' "></i>
+                <p id="numberR" style="float: right;"  onclick="document.getElementById('dropdown-box2').style.display='block' ">1 </p> 
+                <p style="float: right; margin-right: 5px;">Day:</p>
+                    <div id="dropdown-box2">
+                        <input type="radio" id="day1Results" name="num-days" checked onchange="document.getElementById('numberR').innerText='1'; document.getElementById('dropdown-box2').style.display='none' " value="1"> 1 
+                        <input type="radio" id="day2Results" name="num-days" onchange="document.getElementById('numberR').innerText='2'; document.getElementById('dropdown-box2').style.display='none' " value="2"> 2
+                        <input type="radio" id="day3Results" name="num-days" onchange="document.getElementById('numberR').innerText='3'; document.getElementById('dropdown-box2').style.display='none'" value="3"> 3
+                        <input type="radio" id="day4Results" name="num-days" onchange="document.getElementById('numberR').innerText='4'; document.getElementById('dropdown-box2').style.display='none'" value="4"> 4
+                        <input type="radio" id="day5Results" name="num-days" onchange="document.getElementById('numberR').innerText='5'; document.getElementById('dropdown-box2').style.display='none' " value="5"> 5
+                    </div>
             </div>
 
         </div>

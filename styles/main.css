@@ -31,7 +31,7 @@ header img{
     width: 70px;
 }
 
-#status-bar, #q1, #q2, #q22, #q23, #q3{
+#status-bar, #q1, #q2, #q22, #q23, #q3, #confirm, #results{
     display: none;
 }
 @media (max-width: 1023px){
@@ -88,7 +88,7 @@ header img{
         border-color: orange;
     }
 
-    #dropdown1 #dropdown-box{
+    #dropdown-box, #dropdown-box2{
         display: none;
     }
     input[type="radio"]{

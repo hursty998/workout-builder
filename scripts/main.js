@@ -80,6 +80,7 @@ function backE(){
     if (whichE==1){
         document.getElementById("q2").style.display="none"
         document.getElementById("q1").style.display="block"
+        document.getElementById("c1").style.borderColor="orange"
         selected=3
     }
     else if (whichE==2){
@@ -98,6 +99,7 @@ function backE(){
         document.getElementById("q3").style.display="none"
         document.getElementById("q2").style.display="block"
         document.getElementById("q23").style.display="block"
+        document.getElementById("c2").style.borderColor="orange"
         whichE-=1
         selected=3
     }
@@ -105,10 +107,68 @@ function backE(){
 function nextFinal(){
     if (document.getElementById("fullBody").style.borderColor== "green" || document.getElementById("lowerBody").style.borderColor== "green" || document.getElementById("upperBody").style.borderColor== "green"){
         document.getElementById("q3").style.display="none"
+        document.getElementById("status-bar").style.display="none"
         document.getElementById("c3").style.borderColor="green"
         document.getElementById("confirm").style.display="block"
     }
     else{
         alert("You have to select one of these options")
     }
+}
+
+function backLast(){
+    document.getElementById("q3").style.display="block"
+    document.getElementById("status-bar").style.display="block"
+    document.getElementById("c3").style.borderColor="orange"
+    document.getElementById("confirm").style.display="none"
+}
+function confirm(){
+    document.getElementById("confirm").style.display="none"
+    document.getElementById("results").style.display="block"
+}
+
+var numDays
+var BarOrDumb =[]
+var AdjOrFlat = [];
+var MorCorP = []
+var muscles
+function answers(){
+    numDays = document.getElementById("number").innerText
+    
+    if (document.getElementById("barbells").style.borderColor =="green"){
+        BarOrDumb.push("Barbells")
+    }
+    if (document.getElementById("dumbbells").style.borderColor =="green"){
+        BarOrDumb.push(" Dumbbells")
+    }
+    
+    if (document.getElementById("adjustable").style.borderColor =="green"){
+        AdjOrFlat.push("Adjustable Bench")
+    }
+    if (document.getElementById("flat").style.borderColor =="green"){
+        AdjOrFlat.push(" Flat Bench")
+    }
+    if (document.getElementById("machines").style.borderColor =="green"){
+        MorCorP.push("Machines")
+    }
+    if (document.getElementById("Cabels").style.borderColor =="green"){
+        MorCorP.push(" Cabels")
+    }
+    if (document.getElementById("Pullup").style.borderColor =="green"){
+        MorCorP.push(" Pull Up Bar")
+    }
+    if (document.getElementById("fullBody").style.borderColor =="green"){
+        muscles = "Full Body"
+    }
+    if (document.getElementById("lowerBody").style.borderColor =="green"){
+        muscles = "Lower Body"
+    }
+    if (document.getElementById("upperBody").style.borderColor =="green"){
+        muscles = "Upper Body"
+    }
+    document.getElementById("pnumsesh").innerText=numDays
+    document.getElementById("pavailable").innerText=BarOrDumb+", "+AdjOrFlat+", "+MorCorP
+    document.getElementById("pmuscles").innerText=muscles
+
+    console.log(numDays, BarOrDumb, AdjOrFlat, MorCorP, muscles )
 }
