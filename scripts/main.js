@@ -26,6 +26,17 @@ function changeColor(id){
         selected-=1
     }
 }
+function changeColor2(id){
+    if (document.getElementById(id).style.borderColor== "red" || document.getElementById(id).style.borderColor== "" ){
+        document.getElementById("fullBody").style.borderColor= "red";
+        document.getElementById("lowerBody").style.borderColor= "red";
+        document.getElementById("upperBody").style.borderColor= "red";
+        document.getElementById(id).style.borderColor= "green";
+    }
+    else{
+        document.getElementById(id).style.borderColor= "red";
+    }
+}
 
 var whichE = 1
 function nextE(){
@@ -69,25 +80,35 @@ function backE(){
     if (whichE==1){
         document.getElementById("q2").style.display="none"
         document.getElementById("q1").style.display="block"
-        selected=0
+        selected=3
     }
     else if (whichE==2){
         document.getElementById("q22").style.display="none"
         document.getElementById("q21").style.display="block"
         whichE-=1
-        selected=0
+        selected=3
     }
     else if (whichE==3){
         document.getElementById("q23").style.display="none"
         document.getElementById("q22").style.display="block"
         whichE-=1
-        selected=0
+        selected=3
     }
     else{
         document.getElementById("q3").style.display="none"
         document.getElementById("q2").style.display="block"
         document.getElementById("q23").style.display="block"
         whichE-=1
-        selected=0
+        selected=3
+    }
+}
+function nextFinal(){
+    if (document.getElementById("fullBody").style.borderColor== "green" || document.getElementById("lowerBody").style.borderColor== "green" || document.getElementById("upperBody").style.borderColor== "green"){
+        document.getElementById("q3").style.display="none"
+        document.getElementById("c3").style.borderColor="green"
+        document.getElementById("confirm").style.display="block"
+    }
+    else{
+        alert("You have to select one of these options")
     }
 }

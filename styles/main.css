@@ -31,7 +31,7 @@ header img{
     width: 70px;
 }
 
-#status-bar, #q1, #q2, #q22, #q23{
+#status-bar, #q1, #q2, #q22, #q23, #q3{
     display: none;
 }
 @media (max-width: 1023px){
