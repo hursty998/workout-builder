@@ -170,5 +170,5 @@ function answers(){
     document.getElementById("pavailable").innerText=BarOrDumb+", "+AdjOrFlat+", "+MorCorP
     document.getElementById("pmuscles").innerText=muscles
 
-    console.log(numDays, BarOrDumb, AdjOrFlat, MorCorP, muscles )
+    console.log(numDays, BarOrDumb, AdjOrFlat, MorCorP, muscles );
 }
