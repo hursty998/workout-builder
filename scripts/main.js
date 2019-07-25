@@ -135,16 +135,18 @@ var muscles
 function answers(){
     numDays = document.getElementById("number").innerText
     if (numDays<5){
-        document.getElementById("day5Results").style.display="none"
+        document.getElementById("day5Radio").style.display="none"
     }
     if (numDays<4){
-        document.getElementById("day4Results").style.display="none"
+        document.getElementById("day4Radio").style.display="none"
     }
     if (numDays<3){
-        document.getElementById("day3Results").style.display="none"
+        document.getElementById("day3Radio").style.display="none"
     }
     if (numDays<2){
-        document.getElementById("day2Results").style.display="none"
+        document.getElementById("day2Radio").style.display="none"
+        document.getElementById("arrow-down2").style.display="none"
+        document.getElementById("numberR").onclick = document.getElementById('dropdown-box2').style.display='none'
     }
     document.getElementById("pnumsesh").innerText= numDays
     
