@@ -59,17 +59,17 @@
                 <strong> Please Select Which of These Equipment's You Have Available: <br><br></strong>
                 You must have at least one of these equipments available to create a workout <br><br>
                 <div id="q21">
-                    <button class="choice" id="barbells" border-color="red" onclick="changeColor('barbells')">Barbells</button>
-                    <button class="choice" id="dumbbells" border-color="red" onmousedown="changeColor('dumbbells')">Dumbbells</button>
+                    <button class="choice" id="barbells" border-color="red" onclick="changeColor('barbells', 'haveBB'); ">Barbells</button>
+                    <button class="choice" id="dumbbells" border-color="red" onmousedown="changeColor('dumbbells', 'haveDB'); ">Dumbbells</button>
                 </div>
                 <div id="q22">
-                    <button class="choice" id="adjustable" border-color="red" onclick="changeColor('adjustable')">Adjustable Bench</button>
-                    <button class="choice" id="flat" border-color="red" onmousedown="changeColor('flat')">Flat Bench</button>
+                    <button class="choice" id="adjustable" border-color="red" onclick="changeColor('adjustable', 'haveAdj')">Adjustable Bench</button>
+                    <button class="choice" id="flat" border-color="red" onmousedown="changeColor('flat', 'haveFlat')">Flat Bench</button>
                 </div>
                 <div id="q23">
-                    <button class="choice" id="machines" border-color="red" onclick="changeColor('machines')">Machines</button>
-                    <button class="choice" id="Cabels" border-color="red" onmousedown="changeColor('Cabels')">Cabels</button>
-                    <button class="choice" id="Pullup" border-color="red" onmousedown="changeColor('Pullup')">Pull Up Bar</button>
+                    <button class="choice" id="machines" border-color="red" onclick="changeColor('machines', 'haveM')">Machines</button>
+                    <button class="choice" id="Cabels" border-color="red" onmousedown="changeColor('Cabels', 'haveC')">Cabels</button>
+                    <button class="choice" id="Pullup" border-color="red" onmousedown="changeColor('Pullup', 'haveP')">Pull Up Bar</button>
                 </div>
                 <div>
                     <button id="next" onclick="nextE()">Next</button>
@@ -79,9 +79,9 @@
             <div id="q3">
                 <strong> Please Select Which Muscles You Would Like to Work Out: <br><br></strong>
                 You can only select one of these options <br><br>
-                <button class="choice" id="fullBody" border-color="red" onclick="changeColor2('fullBody')">Full Body</button>
-                <button class="choice" id="lowerBody" border-color="red" onclick="changeColor2('lowerBody')">Lower Body</button>
-                <button class="choice" id="upperBody" border-color="red" onclick="changeColor2('upperBody')">Upper Body</button>
+                <button class="choice" id="fullBody" border-color="red" onclick="changeColor2('fullBody', 'selectFB')">Full Body</button>
+                <button class="choice" id="lowerBody" border-color="red" onclick="changeColor2('lowerBody', 'selectLB')">Lower Body</button>
+                <button class="choice" id="upperBody" border-color="red" onclick="changeColor2('upperBody', 'selectUB')">Upper Body</button>
 
                 <div>
                     <button id="next" onclick="nextFinal(); answers()">Next</button>
@@ -114,6 +114,9 @@
                     <div id="day4Radio"><input type="radio" id="day4Results" name="num-days" onchange="document.getElementById('numberR').innerText='4'; document.getElementById('dropdown-box2').style.display='none'" value="4"> 4</div>
                     <div id="day5Radio"><input type="radio" id="day5Results" name="num-days" onchange="document.getElementById('numberR').innerText='5'; document.getElementById('dropdown-box2').style.display='none' " value="5"> 5</div>
                 </div>
+                <div id="results-col1"></div>
+                <div id="results-col2"></div>
+                <div id="results-col3"></div>
             </div>
 
         </div>

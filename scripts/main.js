@@ -1,3 +1,16 @@
+var numDays
+var muscleChoice
+var haveBB=false
+var haveDB =false
+var haveAdj =false
+var haveFlat =false
+var haveM = false
+var haveC = false
+var haveP =false
+var selectFB =false
+var selectLB = false
+var selectUB = false
+var whichE = 1
 
 function openQ1(){
     document.getElementById("welcome-box").style.display="none";
@@ -6,64 +19,72 @@ function openQ1(){
     document.getElementById("c1").style.borderColor ="orange";
 }
 function openQ2(){
+    numDays = document.getElementById("number").innerText
+    if (numDays =="1"){
+        document.getElementById("fullBody").style.display="none"
+    }
+    else{
+        document.getElementById("lowerBody").style.display="none"
+    }
+    if (eval(numDays)>3){
+        document.getElementById("upperBody").style.display="none"
+    }
     document.getElementById("q1").style.display="none";
     document.getElementById("q2").style.display="block";
     document.getElementById("status-bar").style.display="block"
     document.getElementById("c1").style.borderColor ="green";
     document.getElementById("c2").style.borderColor ="orange";
 }
-var selected = 0
-function changeColor(id){
+function changeColor(id,v1){
     
     if (document.getElementById(id).style.borderColor== "red" || document.getElementById(id).style.borderColor== "" ){
         document.getElementById(id).style.borderColor= "green";
-        console.log("green");
-        selected+=1
+        eval(v1+"=true")
     }
     else{
         document.getElementById(id).style.borderColor= "red";
-        console.log("red")
-        selected-=1
+        eval(v1+"=false")
     }
 }
-function changeColor2(id){
+
+function changeColor2(id,v1){
     if (document.getElementById(id).style.borderColor== "red" || document.getElementById(id).style.borderColor== "" ){
         document.getElementById("fullBody").style.borderColor= "red";
         document.getElementById("lowerBody").style.borderColor= "red";
         document.getElementById("upperBody").style.borderColor= "red";
         document.getElementById(id).style.borderColor= "green";
+        eval(v1+"=true")
     }
     else{
         document.getElementById(id).style.borderColor= "red";
+        eval(v1+"=false")
     }
 }
 
-var whichE = 1
+
 function nextE(){
     if (whichE==1){
-        if (selected<1){
+        if (haveBB==false && haveDB==false){
             alert("You have to select at least one of these options")
         }
         else{
             document.getElementById("q21").style.display="none"
             document.getElementById("q22").style.display="block"
             whichE+=1
-            selected=0
         }
     }
     else if (whichE==2){
-        if (selected<1){
+        if (haveAdj==false && haveFlat ==false){
             alert("You have to select at least one of these options")
         }
         else{
             document.getElementById("q22").style.display="none"
             document.getElementById("q23").style.display="block"
             whichE+=1
-            selected=0
         }
     }
     else{
-        if (selected<1){
+        if (haveM == false && haveC ==false && haveP == false){
             alert("You have to select at least one of these options")
         }
         else{
@@ -72,7 +93,6 @@ function nextE(){
             document.getElementById("c3").style.borderColor ="orange";
             document.getElementById("c2").style.borderColor ="green";
             whichE+=1
-            selected=0
         }
     }
 }
@@ -81,19 +101,16 @@ function backE(){
         document.getElementById("q2").style.display="none"
         document.getElementById("q1").style.display="block"
         document.getElementById("c1").style.borderColor="orange"
-        selected=3
     }
     else if (whichE==2){
         document.getElementById("q22").style.display="none"
         document.getElementById("q21").style.display="block"
         whichE-=1
-        selected=3
     }
     else if (whichE==3){
         document.getElementById("q23").style.display="none"
         document.getElementById("q22").style.display="block"
         whichE-=1
-        selected=3
     }
     else{
         document.getElementById("q3").style.display="none"
@@ -101,11 +118,10 @@ function backE(){
         document.getElementById("q23").style.display="block"
         document.getElementById("c2").style.borderColor="orange"
         whichE-=1
-        selected=3
     }
 }
 function nextFinal(){
-    if (document.getElementById("fullBody").style.borderColor== "green" || document.getElementById("lowerBody").style.borderColor== "green" || document.getElementById("upperBody").style.borderColor== "green"){
+    if (selectFB ==true || selectLB==true || selectUB ==true){
         document.getElementById("q3").style.display="none"
         document.getElementById("status-bar").style.display="none"
         document.getElementById("c3").style.borderColor="green"
@@ -127,13 +143,15 @@ function confirm(){
     document.getElementById("results").style.display="block"
 }
 
-var numDays
-var BarOrDumb =[]
-var AdjOrFlat = [];
-var MorCorP = []
-var muscles
+
+
+
 function answers(){
-    numDays = document.getElementById("number").innerText
+    document.getElementById("day5Radio").style.display="block"
+    document.getElementById("day4Radio").style.display="block"
+    document.getElementById("day3Radio").style.display="block"
+    document.getElementById("day2Radio").style.display="block"
+    document.getElementById("pavailable").innerText=""
     if (numDays<5){
         document.getElementById("day5Radio").style.display="none"
     }
@@ -151,44 +169,46 @@ function answers(){
     document.getElementById("pnumsesh").innerText= numDays
     
     if (document.getElementById("barbells").style.borderColor =="green"){
-        BarOrDumb.push("barbells")
         document.getElementById("pavailable").innerText+="Barbells, "
     }
     if (document.getElementById("dumbbells").style.borderColor =="green"){
-        BarOrDumb.push("dumbbells")
         document.getElementById("pavailable").innerText+=" Dumbbells, "
     }
     
     if (document.getElementById("adjustable").style.borderColor =="green"){
-        AdjOrFlat.push("adjustable")
         document.getElementById("pavailable").innerText+=" Adjustable Bench, "
     }
     if (document.getElementById("flat").style.borderColor =="green"){
-        AdjOrFlat.push("flat")
         document.getElementById("pavailable").innerText+=" Flat Bench, "
     }
     if (document.getElementById("machines").style.borderColor =="green"){
-        MorCorP.push("machines")
         document.getElementById("pavailable").innerText+=" Machines, "
     }
     if (document.getElementById("Cabels").style.borderColor =="green"){
-        MorCorP.push("cabels")
         document.getElementById("pavailable").innerText+=" Cabels, "
     }
     if (document.getElementById("Pullup").style.borderColor =="green"){
-        MorCorP.push("pull")
         document.getElementById("pavailable").innerText+=" Pull Up Bar"
     }
-    if (document.getElementById("fullBody").style.borderColor =="green"){
-        muscles = "full"
-        document.getElementById("pmuscles").innerText+= "Full Body"
+    if (selectFB==true){
+        muscleChoice = "full"
+        document.getElementById("pmuscles").innerText= "Full Body"
     }
-    if (document.getElementById("lowerBody").style.borderColor =="green"){
-        muscles = "lower"
-        document.getElementById("pmuscles").innerText+= "Lower Body"
+    if (selectLB==true){
+        muscleChoice = "lower"
+        document.getElementById("pmuscles").innerText= "Lower Body"
     }
-    if (document.getElementById("upperBody").style.borderColor =="green"){
-        muscles = "upper"
-        document.getElementById("pmuscles").innerText+= "Upper Body"
+    if (selectUB==true){
+        muscleChoice = "upper"
+        document.getElementById("pmuscles").innerText= "Upper Body"
     }
+    var chest ="chest"
+    var one ="1"
+    var two="2"
+    var chest12= "lol"
+    eval(chest+one+two+"='asos'")
+    document.getElementById("results-col1").innerHTML=eval(chest+one+two)
+
+    var chestexercises=[]
+ 
 }
