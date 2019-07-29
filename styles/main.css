@@ -32,7 +32,7 @@ header img{
     width: 70px;
 }
 
-#status-bar, #q1, #q2, #q22, #q23, #q3, #confirm, #welcome-box{
+#status-bar, #q1, #q2, #q22, #q23, #q3, #confirm, #results{
     display: none;
 }
 @media (max-width: 1023px){
