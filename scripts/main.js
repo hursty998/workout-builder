@@ -206,7 +206,7 @@ function answers(){
     var two="2"
     var chest12= "lol"
     eval(chest+one+two+"='asos'")
-    document.getElementById("results-col1").innerHTML=eval(chest+one+two)
+    //document.getElementById("results-col1").innerHTML=eval(chest+one+two)
 
     var chestexercises=[]
  
