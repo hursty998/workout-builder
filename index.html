@@ -104,19 +104,51 @@
 
             <div id="results">
                 <strong>Results:</strong>
-                <i id="arrow-down2" style="float: right; margin-left: 5px; margin-top: 4px;" class="fas fa-chevron-down"  onclick="document.getElementById('dropdown-box2').style.display='block' "></i>
-                <p id="numberR" style="float: right;"  onclick="document.getElementById('dropdown-box2').style.display='block' ">1 </p> 
+                <i id="arrow-down2" style="float: right; margin-left: 5px; margin-top: 4px;" class="fas fa-chevron-down"  onclick="document.getElementById('dropdown-box2').style.display='block'; document.getElementById('days').style.display='none' "></i>
+                <p id="numberR" style="float: right;"  onclick="document.getElementById('dropdown-box2').style.display='block'; document.getElementById('days').style.display='none' ">1 </p> 
                 <p style="float: right; margin-right: 5px;">Day:</p>
                 <div id="dropdown-box2">
-                    <input type="radio" id="day1Results" name="num-days" checked onchange="document.getElementById('numberR').innerText='1'; document.getElementById('dropdown-box2').style.display='none' " value="1">1  
-                    <div id="day2Radio"><input type="radio" id="day2Results" name="num-days" onchange="document.getElementById('numberR').innerText='2'; document.getElementById('dropdown-box2').style.display='none' " value="2"> <label for="radio">2</label> </div>
-                    <div id="day3Radio"><input type="radio" id="day3Results" name="num-days" onchange="document.getElementById('numberR').innerText='3'; document.getElementById('dropdown-box2').style.display='none'" value="3"> 3</div>
-                    <div id="day4Radio"><input type="radio" id="day4Results" name="num-days" onchange="document.getElementById('numberR').innerText='4'; document.getElementById('dropdown-box2').style.display='none'" value="4"> 4</div>
-                    <div id="day5Radio"><input type="radio" id="day5Results" name="num-days" onchange="document.getElementById('numberR').innerText='5'; document.getElementById('dropdown-box2').style.display='none' " value="5"> 5</div>
+                    <input type="radio" id="day1Results" name="num-days" checked onchange="document.getElementById('numberR').innerText='1'; document.getElementById('dropdown-box2').style.display='none'; document.getElementById('days').style.display='block' " value="1">1  
+                    <div id="day2Radio"><input type="radio" id="day2Results" name="num-days" onchange="document.getElementById('numberR').innerText='2'; document.getElementById('dropdown-box2').style.display='none'; document.getElementById('days').style.display='block'" value="2"> 2</div>
+                    <div id="day3Radio"><input type="radio" id="day3Results" name="num-days" onchange="document.getElementById('numberR').innerText='3'; document.getElementById('dropdown-box2').style.display='none'; document.getElementById('days').style.display='block'" value="3"> 3</div>
+                    <div id="day4Radio"><input type="radio" id="day4Results" name="num-days" onchange="document.getElementById('numberR').innerText='4'; document.getElementById('dropdown-box2').style.display='none'; document.getElementById('days').style.display='block'" value="4"> 4</div>
+                    <div id="day5Radio"><input type="radio" id="day5Results" name="num-days" onchange="document.getElementById('numberR').innerText='5'; document.getElementById('dropdown-box2').style.display='none'; document.getElementById('days').style.display='block'" value="5"> 5</div>
                 </div>
-                <div id="results-col1"></div>
-                <div id="results-col2"></div>
-                <div id="results-col3"></div>
+                <div id="days">
+                    <div id="results-col1" class="col">
+                        <div id="10" class="row">Exercise:</div>
+                        <div id="11" class="row">2</div>
+                        <div id="12" class="row">2</div>
+                        <div id="13" class="row">2</div>
+                        <div id="14" class="row">2</div>
+                        <div id="15" class="row">2</div>
+                        <div id="16" class="row">2</div>
+                        <div id="17" class="row">2</div>
+                        <div id="18" class="row">2</div>
+                    </div>
+                    <div id="results-col2" class="col">
+                        <div id="20" class="row">Reps:</div>
+                        <div id="21" class="row">2</div>
+                        <div id="22" class="row">2</div>
+                        <div id="23" class="row">2</div>
+                        <div id="24" class="row">2</div>
+                        <div id="25" class="row">2</div>
+                        <div id="26" class="row">2</div>
+                        <div id="27" class="row">2</div>
+                        <div id="28" class="row">2</div>
+                    </div>
+                    <div id="results-col3" class="col">
+                        <div id="30" class="row">Info:</div>
+                        <div id="31" class="row"><i class="fas fa-info-circle"></i></div>
+                        <div id="32" class="row"><i class="fas fa-info-circle"></i></div>
+                        <div id="33" class="row"><i class="fas fa-info-circle"></i></div>
+                        <div id="34" class="row"><i class="fas fa-info-circle"></i></div>
+                        <div id="35" class="row"><i class="fas fa-info-circle"></i></div>
+                        <div id="36" class="row"><i class="fas fa-info-circle"></i></div>
+                        <div id="37" class="row"><i class="fas fa-info-circle"></i></div>
+                        <div id="38" class="row"><i class="fas fa-info-circle"></i></div>
+                    </div>
+                </div>
             </div>
 
         </div>

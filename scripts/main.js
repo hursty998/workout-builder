@@ -22,11 +22,17 @@ function openQ2(){
     numDays = document.getElementById("number").innerText
     if (numDays =="1"){
         document.getElementById("fullBody").style.display="none"
+        document.getElementById("lowerBody").style.display="block"
+        document.getElementById("upperBody").style.display="block"
     }
     else{
+        document.getElementById("fullBody").style.display="block"
         document.getElementById("lowerBody").style.display="none"
+        document.getElementById("upperBody").style.display="block"
     }
     if (eval(numDays)>3){
+        document.getElementById("fullBody").style.display="block"
+        document.getElementById("lowerBody").style.display="none"
         document.getElementById("upperBody").style.display="none"
     }
     document.getElementById("q1").style.display="none";
@@ -138,13 +144,6 @@ function backLast(){
     document.getElementById("c3").style.borderColor="orange"
     document.getElementById("confirm").style.display="none"
 }
-function confirm(){
-    document.getElementById("confirm").style.display="none"
-    document.getElementById("results").style.display="block"
-}
-
-
-
 
 function answers(){
     document.getElementById("day5Radio").style.display="block"
@@ -211,4 +210,31 @@ function answers(){
 
     var chestexercises=[]
  
+}
+function confirm(){
+    document.getElementById("confirm").style.display="none"
+    document.getElementById("results").style.display="block"
+
+    var bbbench=["BB Bench Press", "6-8","Info", "bb", "flat"] //[name, reps, info, equiptment, bench]
+    var dbibench=["DB Incline Bench Press", "6-8","Info", "Db", "adj"]
+    var chest = [bbbench, dbibench]
+
+    var milpress= ["Military Press", "6-8", "Info", "bb", "na"]
+    var seatedsp = ["Seated Shoulder Press", "8-10", "Info", "db", "adj"]
+    var shoulder = [milpress, seatedsp]
+    
+    var chestnew =[]
+    var shouldernew=[]
+    var muscles =[chest, shoulder]
+
+    for (i =0; i<muscles.length; ++i){
+        for (x=0; x< muscles[i].length; ++x){
+            if (muscles[i][x][3]=="adj"){
+                eval(muscles[i]+"new.push('muscles[i][x]')")
+            }
+            
+        }
+    }
+    console.log(chestnew[0], shouldernew)
+    var final=[] //[[day 1 exersizes],[day 2 exersizes]...]
 }
