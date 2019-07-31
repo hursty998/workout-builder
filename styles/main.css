@@ -34,7 +34,7 @@ header img{
 #status-bar, #q1, #q2, #q22, #q23, #q3, #confirm, #results{
     display: none;
 }
-@media (max-width: 1023px){
+@media (max-width: 1022px){
 /* for mobile devices smaller than 1024 pixels, up to a landscape ipad */
 body{
     border: solid 2px;
