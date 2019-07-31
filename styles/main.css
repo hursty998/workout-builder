@@ -37,8 +37,8 @@ header img{
 @media (max-width: 1022px){
 /* for mobile devices smaller than 1024 pixels, up to a landscape ipad */
     body{
-        border: solid 2px;
-        height: 668px;
+        /*border: solid 2px;
+        height: 668px;*/
     }    
     button{
         font-size: 20px;
