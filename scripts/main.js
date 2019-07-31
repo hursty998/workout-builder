@@ -59,11 +59,15 @@ function changeColor2(id,v1){
         document.getElementById("lowerBody").style.borderColor= "red";
         document.getElementById("upperBody").style.borderColor= "red";
         document.getElementById(id).style.borderColor= "green";
+        selectFB=false
+        selectLB=false
+        selectUB=false
         eval(v1+"=true")
     }
     else{
         document.getElementById(id).style.borderColor= "red";
         eval(v1+"=false")
+        console.log(selectLB)
     }
 }
 
@@ -189,6 +193,7 @@ function answers(){
     if (document.getElementById("Pullup").style.borderColor =="green"){
         document.getElementById("pavailable").innerText+=" Pull Up Bar"
     }
+
     if (selectFB==true){
         muscleChoice = "full"
         document.getElementById("pmuscles").innerText= "Full Body"

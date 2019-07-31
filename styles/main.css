@@ -5,8 +5,7 @@
     font-family: 'Open Sans', sans-serif;
 }
 body{
-    border: solid 2px;
-    height: 668px;
+    
 }
 
 header{
@@ -37,7 +36,11 @@ header img{
 }
 @media (max-width: 1023px){
 /* for mobile devices smaller than 1024 pixels, up to a landscape ipad */
-    button{
+body{
+    border: solid 2px;
+    height: 668px;
+}    
+button{
         font-size: 20px;
         border: solid 2px;
         background-color: white;
@@ -52,6 +55,9 @@ header img{
         text-align: center;
     }
     main .container{
+        padding: 15px 30px 30px 30px;
+    }
+    #welcome-box{
         padding: 15px 30px 30px 30px;
     }
     #start {
@@ -108,6 +114,9 @@ header img{
     .choice{
         border-color: red;
     }
+    #results{
+        padding: 15px 30px 30px 30px;
+    }
     .col{
         float: left;
         margin-top: 10px;
@@ -127,7 +136,124 @@ header img{
 
 }
 
-@media (min-width: 1024px){
+@media (min-width: 1023px){
 /* for laptops and PCs, larger than 1025 pixels */
+    button{
+        font-size: 20px;
+        border: solid 2px;
+        background-color: white;
+        padding: 0 10px;
+        margin: 10px 10px 10px 10px;
+    }
+    main{
+        font-size: 25px;
+        text-align: center;
+    }
+    main .container{
+        margin-left: 10%;
+        margin-top: 3%;
+        padding: 15px 100px 30px 100px;
+        
+    }
+    #welcome-box{
+        padding: 50px 100px 100px 100px;
+        background-image: url(assets/bym-background.jpg);
+        background-size: cover;
+        background-color: rgba(0, 0, 0, .65);
+        background-blend-mode: darken;
+        color: white;
+    }
+    #start {
+        width: 15%;
+        height: 40px;
+        border: solid 2px white;
+        background-color: gray;
+        opacity: 0.8;
+        
+    }
+    #status-bar{
+        float: left;
+        width: 10%;
+        height: 100%;
+        justify-content: center;
+        margin: 40px 0px 0 0px;
+    }
+    .circle{
+        position: relative;
+        display: inline-block;
+        width: 90px;
+        height: 90px;
+        padding: 0 5px 0 5px;
+        margin-left: 5px;
+        margin-right: 5px;
+        font-size: 16px;
+        border: solid 2px;
+        border-radius: 50%;
+    }
+    .circle p{
+        position: absolute;
+        bottom: 25px;
+    }
+    #cp2{
+        bottom: 35px;
+        font-size: 15px;
+    }
+    #c1{
+        border-color: orange;
+        
+    }
     
+
+    #dropdown-box, #dropdown-box2{
+        display: none;
+    }
+    input[type="radio"]{
+        margin-left: 17px;
+    }
+    #next{
+        position: absolute;
+        bottom: 50px;
+        width: 30%;
+        height: 50px;
+        left: 60%;
+    }
+    #back{
+        position: absolute;
+        bottom: 50px;
+        left: 20%;
+        width: 20%;
+        height: 50px;
+    }
+    .choice{
+        border-color: red;
+        margin-top: 20px;
+        height: 50px;
+    }
+    #confirm{
+        position: absolute;
+        left: 30%;
+        font-size: 20px;
+    }
+    #confirm #next, #confirm #back{
+        bottom: -90px;
+    }
+    #results{
+        margin: 0px 30px 30px 30px;
+    }
+    .col{
+        float: left;
+        margin-top: 10px;
+    }
+    #results-col1{
+        width: 40%;
+    }
+    #results-col2{
+        width: 30%;
+    }
+    #results-col3{
+        width: 20%;
+    }
+    .row   {
+        width: 100%;
+    }
 }
