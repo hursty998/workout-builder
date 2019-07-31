@@ -36,11 +36,11 @@ header img{
 }
 @media (max-width: 1022px){
 /* for mobile devices smaller than 1024 pixels, up to a landscape ipad */
-body{
-    border: solid 2px;
-    height: 668px;
-}    
-button{
+    body{
+        border: solid 2px;
+        height: 668px;
+    }    
+    button{
         font-size: 20px;
         border: solid 2px;
         background-color: white;
@@ -156,7 +156,7 @@ button{
         
     }
     #welcome-box{
-        padding: 50px 100px 100px 100px;
+        padding: 50px 100px 150px 100px;
         background-image: url(assets/bym-background.jpg);
         background-size: cover;
         background-color: rgba(0, 0, 0, .65);
