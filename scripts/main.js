@@ -144,7 +144,7 @@ function backE(){
     }
 }
 function nextFinal(){
-    if (selectFB ==true || selectLB==true || selectUB ==true){
+    if ((selectFB ==true && numDays<2) || (selectLB==true && numDays==1) || (selectUB ==true && numDays<4)){
         document.getElementById("q3").style.display="none"
         document.getElementById("status-bar").style.display="none"
         document.getElementById("c3").style.borderColor="green"
