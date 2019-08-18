@@ -234,8 +234,15 @@ function confirm(){
     document.getElementById("results").style.display="block"
 
     var bbbench=["BB Bench Press", "6-8","Info", "bb", "flat"] //[name, reps, info, equiptment, bench]
-    var dbibench=["DB Incline Bench Press", "6-8","Info", "Db", "adj"]
-    var chest = [bbbench, dbibench]
+    var dbbench=["DB Bench Press","6-8","Info", "db", "flat"]
+    var bbibench=["BB Incline Bench Press", "6-8","Info", "bb", "adj"]
+    var dbibench=["DB Incline Bench Press", "6-8","Info", "db", "adj"]
+    var hlcablecross=["Hight to Low Cable Cross Overs","6-10", "info", "cable", "na"]
+    var dips=["Weighted Dips","6-8", "info", "bb", "na"]
+    var dbchestflys=["DB Chest Flys","6-10","info","db","flat"]
+    var mchestflys=["Machine Chest Flys","8-12","info","machine","na"]
+    
+    var chest = [bbbench,dbbench,bbibench, dbibench, hlcablecross,dips,dbchestflys,mchestflys]
 
     var milpress= ["Military Press", "6-8", "Info", "bb", "na"]
     var seatedsp = ["Seated Shoulder Press", "8-10", "Info", "db", "adj"]
@@ -243,16 +250,18 @@ function confirm(){
     
     var chestnew =[]
     var shouldernew=[]
-    var muscles =[chest, shoulder]
+    var muscles =[chest, back, shoulder]
 
+    console.log(muscles[0][0][0])
     for (i =0; i<muscles.length; ++i){
         for (x=0; x< muscles[i].length; ++x){
-            if (muscles[i][x][3]=="adj"){
-                eval(muscles[i]+"new.push('muscles[i][x]')")
+            if ((muscles[i][x][4]=="adj" && haveAdj==false)||(muscles[i][x][3]=="db" && haveDB==false)||(muscles[i][x][3]=="bb" && haveBB==false)||(muscles[i][x][3]=="cable" && haveC==false)||(muscles[i][x][3]=="machine" && haveM==false)|| (muscles[i][x][3]=="pull" && haveP==false)){
+                muscles[i].splice(x,1)
+                console.log(muscles[i])
             }
             
         }
     }
-    console.log(chestnew[0], shouldernew)
+    console.log(chest, shoulder)
     var final=[] //[[day 1 exersizes],[day 2 exersizes]...]
 }
