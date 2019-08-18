@@ -25,12 +25,17 @@ function openQ2(){
         document.getElementById("lowerBody").style.display="block"
         document.getElementById("upperBody").style.display="block"
     }
-    else{
+    else if (numDays=="2"){
+        document.getElementById("fullBody").style.display="none"
+        document.getElementById("lowerBody").style.display="none"
+        document.getElementById("upperBody").style.display="block"
+    }
+    else if (numDays=="3"){
         document.getElementById("fullBody").style.display="block"
         document.getElementById("lowerBody").style.display="none"
         document.getElementById("upperBody").style.display="block"
     }
-    if (eval(numDays)>3){
+    else{
         document.getElementById("fullBody").style.display="block"
         document.getElementById("lowerBody").style.display="none"
         document.getElementById("upperBody").style.display="none"
