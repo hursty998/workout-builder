@@ -52,7 +52,20 @@ function changeColor(id,v1){
         eval(v1+"=false")
     }
 }
-
+function changeColor3(id, v1){
+    if (document.getElementById(id).style.borderColor== "red" || document.getElementById(id).style.borderColor== "" ){
+        document.getElementById("adjustable").style.borderColor= "red";
+        document.getElementById("flat").style.borderColor= "red";
+        document.getElementById(id).style.borderColor= "green";
+        haveFlat=false
+        haveAdj=false
+        eval(v1+"=true")
+    }
+    else{
+        document.getElementById(id).style.borderColor= "red";
+        eval(v1+"=false")
+    }
+}
 function changeColor2(id,v1){
     if (document.getElementById(id).style.borderColor== "red" || document.getElementById(id).style.borderColor== "" ){
         document.getElementById("fullBody").style.borderColor= "red";
