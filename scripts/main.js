@@ -253,7 +253,7 @@ var shoulder = [milpress, seatedsp, dblatraisers, reversefly, reversepecdec, fac
 var deadlift =["Deadlift", "6-8", "Info", "bb", "na"]
 var dualpulleyrow =["Seated Dual Pulley Row", "6-10", "info", "c", "na"]
 var pullups =["Wide Grip Pull Ups", "6-12", "info", "p", "na"]
-var latpulldowns = ["Lat Front Pull Downs", "6-10", "c", "na"]
+var latpulldowns = ["Lat Front Pull Downs", "6-10", "info", "c", "na"]
 var chestrow = ["Chest Supported Row", "6-10", "info", "bb"," adj"]
 var scapular = ["Scapular Pull Ups", "8+", "info", "p", "na"]
 
@@ -295,6 +295,7 @@ var day2=[]
 var day3=[]
 var day4=[]
 var day5=[]
+var currentDay=1
 
 function confirm(){
     document.getElementById("confirm").style.display="none"
@@ -485,16 +486,24 @@ function confirm(){
 }
 
 function changeday(num){
-for (i=0; i<=7; i++){
-    if (typeof eval("day"+num)[i] === 'undefined' || eval("day"+num)[i] === null ){
-        document.getElementById("1"+ (i+1).toString()).innerText=""
-        document.getElementById("2"+ (i+1).toString()).innerText=""
-    }
-    else{
-        document.getElementById("1"+ (i+1).toString()).innerText=eval("day"+num)[i][0]
-        document.getElementById("2"+ (i+1).toString()).innerText=eval("day"+num)[i][1]
+    currentDay=num
+    for (i=0; i<=7; i++){
+        if (typeof eval("day"+num)[i] === 'undefined' || eval("day"+num)[i] === null ){
+            document.getElementById("1"+ (i+1).toString()).innerText=""
+            document.getElementById("2"+ (i+1).toString()).innerText=""
+            document.getElementById("3"+ (i+1).toString()).style.display="none"
+        }
+        else{
+            document.getElementById("1"+ (i+1).toString()).innerText=eval("day"+num)[i][0]
+            document.getElementById("2"+ (i+1).toString()).innerText=eval("day"+num)[i][1]
+            document.getElementById("3"+ (i+1).toString()).style.display="block"
+        }
     }
 }
 
-
+function showInfo(exnum){
+    document.getElementById("infoBox").style.display="block"
+    document.getElementById("results").style.display="none"
+    document.getElementById("infoBoxTitle").innerText=eval("day"+currentDay)[exnum][0] +" Information:"
+    document.getElementById("infoBoxText").innerText=eval("day"+currentDay)[exnum][2]
 }

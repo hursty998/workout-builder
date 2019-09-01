@@ -116,7 +116,7 @@
             </div>
             <div id="days">
                 <div id="results-col1" class="col">
-                    <div id="10" class="row">Exercise:</div>
+                    <div id="10" class="row">Exercise:</div><br>
                     <div id="11" class="row">2</div>
                     <div id="12" class="row">2</div>
                     <div id="13" class="row">2</div>
@@ -127,7 +127,7 @@
                     <div id="18" class="row">2</div>
                 </div>
                 <div id="results-col2" class="col">
-                    <div id="20" class="row">Reps:</div>
+                    <div id="20" class="row">Reps:</div><br>
                     <div id="21" class="row">2</div>
                     <div id="22" class="row">2</div>
                     <div id="23" class="row">2</div>
@@ -138,18 +138,24 @@
                     <div id="28" class="row">2</div>
                 </div>
                 <div id="results-col3" class="col">
-                    <div id="30" class="row">Info:</div>
-                    <div id="31" class="row"><i class="fas fa-info-circle"></i></div>
-                    <div id="32" class="row"><i class="fas fa-info-circle"></i></div>
-                    <div id="33" class="row"><i class="fas fa-info-circle"></i></div>
-                    <div id="34" class="row"><i class="fas fa-info-circle"></i></div>
-                    <div id="35" class="row"><i class="fas fa-info-circle"></i></div>
-                    <div id="36" class="row"><i class="fas fa-info-circle"></i></div>
-                    <div id="37" class="row"><i class="fas fa-info-circle"></i></div>
-                    <div id="38" class="row"><i class="fas fa-info-circle"></i></div>
+                    <div id="30" class="row">Info:</div><br>
+                    <div id="31" class="row" onclick="showInfo(0)"><i class="fas fa-info-circle"></i></div>
+                    <div id="32" class="row" onclick="showInfo(1)"><i class="fas fa-info-circle"></i></div>
+                    <div id="33" class="row" onclick="showInfo(2)"><i class="fas fa-info-circle"></i></div>
+                    <div id="34" class="row" onclick="showInfo(3)"><i class="fas fa-info-circle"></i></div>
+                    <div id="35" class="row" onclick="showInfo(4)"><i class="fas fa-info-circle"></i></div>
+                    <div id="36" class="row" onclick="showInfo(5)"><i class="fas fa-info-circle"></i></div>
+                    <div id="37" class="row" onclick="showInfo(6)"><i class="fas fa-info-circle"></i></div>
+                    <div id="38" class="row" onclick="showInfo(7)"><i class="fas fa-info-circle"></i></div>
                 </div>
             </div>
         </div>
+        <div id="infoBox"><br>
+            <i class="far fa-times-circle" id="backBtn" style="float: right; margin-right: 5%;" onclick="document.getElementById('infoBox').style.display='none'; document.getElementById('results').style.display='block' "></i>
+            <h3 id="infoBoxTitle"></h3><br>
+            <p id="infoBoxText"></p>
+        </div>
+        
 
         
     </main>

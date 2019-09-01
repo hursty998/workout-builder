@@ -30,7 +30,7 @@ header img{
     width: 70px;
 }
 
-#status-bar, #q1, #q2, #q22, #q23, #q3, #confirm, #results{
+#status-bar, #q1, #q2, #q22, #q23, #q3, #confirm, #results, #infoBox{
     display: none;
 }
 @media (max-width: 1022px){
@@ -254,5 +254,8 @@ header img{
     }
     .row   {
         width: 100%;
+    }
+    #backBtn{
+        width: 50px;
     }
 }
