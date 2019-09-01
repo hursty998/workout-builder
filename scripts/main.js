@@ -230,43 +230,271 @@ function answers(){
     var chest12= "lol"
     eval(chest+one+two+"='asos'")
     //document.getElementById("results-col1").innerHTML=eval(chest+one+two)
-
-    var chestexercises=[]
- 
 }
+
+var bbdbbench=["BB/DB Bench Press", "6-8","Info", "na", "flat"] //[name, reps, info, equiptment, bench]
+var bbdbibench=["BB/DB Incline Bench Press", "6-8","Info", "na", "adj"]
+var hlcablecross=["Hight to Low Cable Cross Overs","6-10", "info", "cable", "na"]
+var dips=["Weighted Dips","6-8", "info", "na", "na"]
+var dbchestflys=["DB Chest Flys","6-10","info","db","flat"]
+var mchestflys=["Machine Chest Flys","8-12","info","machine","na"]
+
+var chest = [bbdbbench,bbdbibench, hlcablecross,dips,dbchestflys,mchestflys]
+
+var milpress= ["Military Press", "6-8", "Info", "bb", "na"]
+var seatedsp = ["Seated Shoulder Press", "8-10", "Info", "db", "adj"]
+var dblatraisers = ["DB Lateral Raisers", "6-10", "info", "db","na"]
+var reversefly = ["Reverse Flys", "6-10", "info", "m", "na"]
+var reversepecdec= ["Reverse Pec Dec", "6-10", "info", "m", "na"]
+var facepulls = ["Standing Face Pulls", "6-10", "info", "c", "na"]
+
+var shoulder = [milpress, seatedsp, dblatraisers, reversefly, reversepecdec, facepulls]
+
+var deadlift =["Deadlift", "6-8", "Info", "bb", "na"]
+var dualpulleyrow =["Seated Dual Pulley Row", "6-10", "info", "c", "na"]
+var pullups =["Wide Grip Pull Ups", "6-12", "info", "p", "na"]
+var latpulldowns = ["Lat Front Pull Downs", "6-10", "c", "na"]
+var chestrow = ["Chest Supported Row", "6-10", "info", "bb"," adj"]
+var scapular = ["Scapular Pull Ups", "8+", "info", "p", "na"]
+
+var back=[deadlift, dualpulleyrow, pullups, latpulldowns, chestrow, scapular]
+
+var chinups =["Chin Ups", "6-8", "info", "p", "na"]
+var inclinecurl = ["Incline Curl", "6-8", "info", "bb", "adj"]
+var concentrationcurl = ["Concentration Curl", "6-8", "info", "db", "flat"]
+var reverseezcurl = ["Reverse EZ Bar Curl", "6-8", "info", "bb", "na"]
+
+var bicep=[chinups, inclinecurl, concentrationcurl, reverseezcurl]
+
+var closegripbench = ["Close Grip Bench", "6-8", "info", "bb", "flat"]
+var overheadextentions =["Overhead Cable Extensions", "6-8", "info", "c", "na"]
+var skullcrushers= ["BB/DB Skull Crushers", "6-8", "info", "na", "flat"]
+var cablepulldowns = ["Cable Pull Downs", "6-8", "info", "c", "na"]
+var diamondpushups = ["Diamond Push Ups", "6-8", "info", "na", "na"]
+
+var tricep=[closegripbench, overheadextentions, skullcrushers, cablepulldowns, diamondpushups, dips]
+
+var legraisers = ["Hanging Leg Raisers", "8-10", "info", "p", "na"]
+var plank = ["Plank", "1 min", "info", "na", "na"]
+var russiatwist = ["Russian Twists", "1 min", "info", "db", "na"]
+
+var core=[legraisers, russiatwist, plank]
+
+var bbbacksquat = ["BB Back Squat", "6-8", "info","bb", "na"]
+var bbdbfrontsquat = ["BB/DB Front Squat", "6-8", "info", "na", "na"]
+var legpress = ["Leg Press", "6-10", "Info", "m", "na"]
+var splitsquat = ["BB/DB Bulgarian Split Squat", "6-8", "info", "na", "na"]
+var hipthrusts = ["Weighted Hip Thrusts", "6-10", "info", "na", "na"]
+
+var legs=[bbbacksquat, bbdbfrontsquat, legpress, splitsquat, hipthrusts]
+
+var muscles =[chest, back, shoulder, bicep, tricep, core, legs]
+
+var day1=[]
+var day2=[]
+var day3=[]
+var day4=[]
+var day5=[]
+
 function confirm(){
     document.getElementById("confirm").style.display="none"
     document.getElementById("results").style.display="block"
 
-    var bbbench=["BB Bench Press", "6-8","Info", "bb", "flat"] //[name, reps, info, equiptment, bench]
-    var dbbench=["DB Bench Press","6-8","Info", "db", "flat"]
-    var bbibench=["BB Incline Bench Press", "6-8","Info", "bb", "adj"]
-    var dbibench=["DB Incline Bench Press", "6-8","Info", "db", "adj"]
-    var hlcablecross=["Hight to Low Cable Cross Overs","6-10", "info", "cable", "na"]
-    var dips=["Weighted Dips","6-8", "info", "bb", "na"]
-    var dbchestflys=["DB Chest Flys","6-10","info","db","flat"]
-    var mchestflys=["Machine Chest Flys","8-12","info","machine","na"]
     
-    var chest = [bbbench,dbbench,bbibench, dbibench, hlcablecross,dips,dbchestflys,mchestflys]
-
-    var milpress= ["Military Press", "6-8", "Info", "bb", "na"]
-    var seatedsp = ["Seated Shoulder Press", "8-10", "Info", "db", "adj"]
-    var shoulder = [milpress, seatedsp]
-    
-    var chestnew =[]
-    var shouldernew=[]
-    var muscles =[chest, back, shoulder]
-
-    console.log(muscles[0][0][0])
     for (i =0; i<muscles.length; ++i){
-        for (x=0; x< muscles[i].length; ++x){
+        for (x=muscles[i].length-1; x>=0; x--){
             if ((muscles[i][x][4]=="adj" && haveAdj==false)||(muscles[i][x][3]=="db" && haveDB==false)||(muscles[i][x][3]=="bb" && haveBB==false)||(muscles[i][x][3]=="cable" && haveC==false)||(muscles[i][x][3]=="machine" && haveM==false)|| (muscles[i][x][3]=="pull" && haveP==false)){
                 muscles[i].splice(x,1)
-                console.log(muscles[i])
             }
-            
         }
     }
-    console.log(chest, shoulder)
-    var final=[] //[[day 1 exersizes],[day 2 exersizes]...]
+
+    
+    console.log(selectLB, legs[0][0])
+    if (selectLB==true){
+        console.log("yes")
+        day1[0]=legs[0]
+        day1[1]=legs[1]
+        day1[2]=legs[2]
+        day1[3]=legs[3]
+    }
+    else if (selectUB==true && numDays==1){
+        day1[0]=chest[0]
+        day1[1]=chest[1]
+        day1[2]=back[0]
+        day1[3]=back[1]
+        day1[4]=shoulder[0]
+        day1[5]=shoulder[1]
+        day1[6]=bicep[0]
+        day1[7]=tricep[0]
+    }
+    else if (selectUB==true && numDays==2){
+        day1[0]=chest[0]
+        day1[1]=chest[1]
+        day1[2]=chest[2]
+        day1[3]=shoulder[0]
+        day1[4]=shoulder[1]
+        day1[5]=shoulder[2]
+        day1[6]=tricep[0]
+        day1[7]=tricep[1]
+
+        day2[0]=back[0]
+        day2[1]=back[1]
+        day2[2]=back[2]
+        day2[3]=bicep[0]
+        day2[4]=bicep[1]
+        day2[5]=bicep[2]
+        day2[6]=core[0]
+        day2[7]=core[1]
+    }
+    else if (selectUB==true && numDays==3){
+        day1[0]=chest[0]
+        day1[1]=chest[1]
+        day1[2]=chest[2]
+        day1[3]=back[0]
+        day1[4]=back[1]
+        day1[5]=back[2]
+        day1[6]=bicep[0]
+        day1[7]=bicep[1]
+
+        day2[0]=shoulder[0]
+        day2[1]=shoulder[1]
+        day2[2]=shoulder[2]
+        day2[3]=chest[0]
+        day2[4]=chest[1]
+        day2[5]=tricep[0]
+        day2[6]=tricep[1]
+        day2[7]=tricep[2]
+
+        day3[0]=back[0]
+        day3[1]=back[1]
+        day3[2]=shoulder[0]
+        day3[3]=shoulder[1]
+        day3[4]=shoulder[2]
+        day3[5]=bicep[0]
+        day3[6]=bicep[1]
+        day3[7]=bicep[2]
+    }
+    else if (selectFB==true && numDays==3){
+        day1[0]=chest[0]
+        day1[1]=chest[1]
+        day1[2]=chest[2]
+        day1[3]=back[0]
+        day1[4]=back[1]
+        day1[5]=back[2]
+        day1[6]=bicep[0]
+        day1[7]=bicep[1]
+
+        day2[0]=legs[0]
+        day2[1]=legs[1]
+        day2[2]=legs[2]
+        day2[3]=shoulder[0]
+        day2[4]=shoulder[1]
+        day2[5]=shoulder[2]
+        day2[6]=tricep[0]
+        day2[7]=tricep[1]
+
+        day3[0]=chest[0]
+        day3[1]=chest[1]
+        day3[2]=chest[2]
+        day3[3]=shoulder[0]
+        day3[4]=shoulder[1]
+        day3[5]=bicep[0]
+        day3[6]=bicep[1]
+        day3[7]=bicep[2]
+    }
+    else if (selectFB==true && numDays==4){
+        day1[0]=chest[0]
+        day1[1]=chest[1]
+        day1[2]=chest[2]
+        day1[3]=back[0]
+        day1[4]=back[1]
+        day1[5]=back[2]
+        day1[6]=bicep[0]
+        day1[7]=bicep[1]
+
+        day2[0]=legs[0]
+        day2[1]=legs[1]
+        day2[2]=legs[2]
+        day2[3]=shoulder[0]
+        day2[4]=shoulder[1]
+        day2[5]=shoulder[2]
+        day2[6]=tricep[0]
+        day2[7]=tricep[1]
+
+        day3[0]=chest[0]
+        day3[1]=chest[1]
+        day3[2]=chest[2]
+        day3[3]=back[0]
+        day3[4]=back[1]
+        day3[5]=back[2]
+        day3[6]=bicep[0]
+        day3[7]=bicep[1]
+
+        day4[0]=legs[0]
+        day4[1]=legs[1]
+        day4[2]=legs[2]
+        day4[3]=shoulder[0]
+        day4[4]=shoulder[1]
+        day4[5]=shoulder[2]
+        day4[6]=tricep[0]
+        day4[7]=tricep[1]
+    }
+    else if (selectFB==true && numDays==5){
+        day1[0]=chest[0]
+        day1[1]=chest[1]
+        day1[2]=chest[2]
+        day1[3]=back[0]
+        day1[4]=back[1]
+        day1[5]=back[2]
+        day1[6]=bicep[0]
+        day1[7]=bicep[1]
+
+        day2[0]=legs[0]
+        day2[1]=legs[1]
+        day2[2]=legs[2]
+        day2[3]=legs[3]
+
+        day3[0]=shoulder[0]
+        day3[1]=shoulder[1]
+        day3[2]=shoulder[2]
+        day3[3]=chest[0]
+        day3[4]=chest[1]
+        day3[5]=tricep[0]
+        day3[6]=tricep[1]
+        day3[7]=tricep[2]
+
+        day4[0]=legs[0]
+        day4[1]=legs[1]
+        day4[2]=legs[2]
+        day4[3]=legs[3]
+
+        day5[0]=back[0]
+        day5[1]=back[1]
+        day5[2]=shoulder[0]
+        day5[3]=shoulder[1]
+        day5[4]=shoulder[2]
+        day5[5]=bicep[0]
+        day5[6]=bicep[1]
+        day5[7]=bicep[2]  
+    }
+    for (i=0; i<day1.length; ++i){
+        console.log(day1[i][0])
+    }
+    changeday(1)
+}
+
+function changeday(num){
+for (i=0; i<=7; i++){
+    if (typeof eval("day"+num)[i] === 'undefined' || eval("day"+num)[i] === null ){
+        document.getElementById("1"+ (i+1).toString()).innerText=""
+        document.getElementById("2"+ (i+1).toString()).innerText=""
+    }
+    else{
+        document.getElementById("1"+ (i+1).toString()).innerText=eval("day"+num)[i][0]
+        document.getElementById("2"+ (i+1).toString()).innerText=eval("day"+num)[i][1]
+    }
+}
+
+
 }
