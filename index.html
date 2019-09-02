@@ -13,8 +13,8 @@
 <body>
     <header>
         <div class="container">
-            <h1 id="website-name">Workout Builder</h1>
-            <img src="styles/assets/logo.png" alt="logo image">
+            <h1 id="website-name" onclick="toHome()">Workout Builder</h1>
+            <img src="styles/assets/logo.png" alt="logo image" onclick="toHome()">
         </div>
     </header>
     <main>
@@ -102,6 +102,7 @@
                 </div>
             </div>
         </div>
+        
         <div id="results">
             <strong>Results:</strong>
             <i id="arrow-down2" style="float: right; margin-left: 5px; margin-top: 4px; margin-right: 50px;" class="fas fa-chevron-down"  onclick="document.getElementById('dropdown-box2').style.display='block'; document.getElementById('days').style.display='none' "></i>
@@ -148,6 +149,7 @@
                     <div id="37" class="row" onclick="showInfo(6)"><i class="fas fa-info-circle"></i></div>
                     <div id="38" class="row" onclick="showInfo(7)"><i class="fas fa-info-circle"></i></div>
                 </div>
+                
             </div>
         </div>
         <div id="infoBox"><br>

@@ -234,10 +234,10 @@ function answers(){
 
 var bbdbbench=["BB/DB Bench Press", "6-8","Emphasises Sternal Head of Pec (Mid Chest) with work on triceps and anterior deltoid \n \n Proven to be the best exercise at activating the chest with 100 average EMG and 6.5 RPE (Whitnee Schanke, 2012 & John P. Porcari, 2012) \n \n Exercise that you can lift the most weight with. \n \n It has a positive correlation between 1 rep max on bench press and the size of chest. \n \n Go all the way down to chest for greater range of motion leading to greater hypertrophy.\n \n Optimal repetitions 6-10 for 3-4 sets", "na", "flat"] //[name, reps, info, equiptment, bench]
 var bbdbibench=["BB/DB Incline Bench Press", "6-8","Both mid and lower chest are emphasised, mainly lower. \n \n Almost as effective as the bench press at activating the chest (Whitnee Schanke, 2012) \n \n As you can cross your hands at the bottom position, there is greater horizontal adduction at the shoulder, therefore better activating the chest \n \n Optimal repetitions 6-10 for 3-4 sets.", "na", "adj"]
-var hlcablecross=["Hight to Low Cable Cross Overs","6-10", "Heavy emphasis on upper chest. \n \n Almost as effective as the bench press at activating the chest (Whitnee Schanke, 2012) \n \n o	Optimal repetitions 10+ for 3-4 sets", "cable", "na"]
+var hlcablecross=["Hight to Low Cable Cross Overs","6-10", "Heavy emphasis on upper chest. \n \n Almost as effective as the bench press at activating the chest (Whitnee Schanke, 2012) \n \n o	Optimal repetitions 10+ for 3-4 sets", "c", "na"]
 var dips=["Weighted Dips","6-8", "Most effective exercise for hitting the lower chest (Bret Contreras, 2010) \n \n With a slight lean forward, the lower chest is target more. \n \n Optimal repetitions 8-12 for 3 sets", "na", "na"]
 var dbchestflys=["DB Chest Flys","6-10","Have a large range of motion and is a very simple exercise \n \n Do not overload as this may cause damage to joints","db","flat"]
-var mchestflys=["Machine Chest Flys","8-12","Targets the mid chest without activating many other secondary mucles. \n \n Great if you are lacking in chest size.","machine","na"]
+var mchestflys=["Machine Chest Flys","8-12","Targets the mid chest without activating many other secondary mucles. \n \n Great if you are lacking in chest size.","m","na"]
 
 var chest = [bbdbbench,bbdbibench, hlcablecross,dips,dbchestflys,mchestflys]
 
@@ -283,7 +283,7 @@ var core=[legraisers, russiatwist, plank]
 var bbbacksquat = ["BB Back Squat", "6-8", "Emphasises quadriceps, glutes and hamstrings \n \n There is a two-fold increase in muscle size in subjects that performed full range of motion squats as opposed to partial squats over a period of 8 weeks. \n \n o	Barbell squats elicited 43% higher average leg muscle activity when compared to smith machine squats (Schwanbeck S, 2009)","bb", "na"]
 var bbdbfrontsquat = ["BB/DB Front Squat", "6-8", "Works on the same muscles as back squats but also works on multiple muscles in the back that are commonly missed \n \n Overall quadriceps activation is very similar between the front and back squats \n \n Also, front squats may emphasize certain quadricep muscles that aren’t activated as well during the back squat.", "na", "na"]
 var legpress = ["Leg Press", "6-10", "Alternative for front squat if machine is available \n \n Reduces effort in gym as doing two exercises involving squatting requires a lot of work", "m", "na"]
-var splitsquat = ["BB/DB Bulgarian Split Squat", "6-8", "o	Works on all major leg muscles with emphasis on glutes and hamstrings \n \n It involves the hamstrings and glutes more heavily than the squat \n \n Study says that the split squat may be as effective at increasing back squat 1 rep max than the back squat itself", "na", "na"]
+var splitsquat = ["BB/DB Bulgarian Split Squat", "6-8", "o	Works on all major leg muscles with emphasis on glutes and hamstrings \n \n It involves the hamstrings and glutes more heavily than the squat \n \n Study says that the split squat may be as effective at increasing back squat 1 rep max than the back squat itself", "m", "na"]
 var hipthrusts = ["Weighted Hip Thrusts", "6-10", "o	Emphasises the glutes and works hamstrings  \n \n Highest glute activation exercise. Mean activation of glutes in this exercise is 100% of maximum voluntary contraction compared to back squats 50-70% (Bret Contreras, 2010)", "na", "na"]
 
 var legs=[bbbacksquat, bbdbfrontsquat, legpress, splitsquat, hipthrusts]
@@ -304,14 +304,12 @@ function confirm(){
     
     for (i =0; i<muscles.length; ++i){
         for (x=muscles[i].length-1; x>=0; x--){
-            if ((muscles[i][x][4]=="adj" && haveAdj==false)||(muscles[i][x][3]=="db" && haveDB==false)||(muscles[i][x][3]=="bb" && haveBB==false)||(muscles[i][x][3]=="cable" && haveC==false)||(muscles[i][x][3]=="machine" && haveM==false)|| (muscles[i][x][3]=="pull" && haveP==false)){
+            if ((muscles[i][x][4]=="adj" && haveAdj==false)||(muscles[i][x][3]=="db" && haveDB==false)||(muscles[i][x][3]=="bb" && haveBB==false)||(muscles[i][x][3]=="c" && haveC==false)||(muscles[i][x][3]=="m" && haveM==false)|| (muscles[i][x][3]=="p" && haveP==false)){
                 muscles[i].splice(x,1)
             }
         }
     }
 
-    
-    console.log(selectLB, legs[0][0])
     if (selectLB==true){
         console.log("yes")
         day1[0]=legs[0]
@@ -479,9 +477,7 @@ function confirm(){
         day5[6]=bicep[1]
         day5[7]=bicep[2]  
     }
-    for (i=0; i<day1.length; ++i){
-        console.log(day1[i][0])
-    }
+    
     changeday(1)
 }
 
@@ -506,4 +502,17 @@ function showInfo(exnum){
     document.getElementById("results").style.display="none"
     document.getElementById("infoBoxTitle").innerText=eval("day"+currentDay)[exnum][0] +" Information:"
     document.getElementById("infoBoxText").innerText=eval("day"+currentDay)[exnum][2]
+}
+
+function toHome(){
+    document.getElementById("welcome-box").style.display="block"
+    document.getElementById("status-bar").style.display="none"
+    document.getElementById("q1").style.display="none"
+    document.getElementById("q2").style.display="none"
+    document.getElementById("q22").style.display="none"
+    document.getElementById("q23").style.display="none"
+    document.getElementById("q3").style.display="none"
+    document.getElementById("confirm").style.display="none"
+    document.getElementById("results").style.display="none"
+    document.getElementById("infoBox").style.display="none"
 }
