@@ -145,7 +145,7 @@ header img{
         padding: 0 20px 20px 20px;
     }
     #print-btn{
-        width: 50%;
+        width: 70%;
     }
 
 }
@@ -282,4 +282,12 @@ header img{
         height: 50px;
     }
     
+}
+@media print{
+    #print-btn{
+        display: none;
+    }
+    #results-col3{
+        display: none;
+    }
 }
